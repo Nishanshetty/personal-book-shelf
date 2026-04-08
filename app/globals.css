@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-cream: #FAF6F1;
+  --brown-dark: #2C1810;
+  --brown-mid: #6B5744;
+  --brown-muted: #A89882;
+  --gold: #D4A574;
+  --border-light: #E8DDD0;
+  --border-mid: #D7C9B8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--brown-dark);
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-brown-dark text-cream font-medium rounded-lg hover:bg-[#3d2418] transition-all duration-200 hover:shadow-md;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-brown-dark text-brown-dark font-medium rounded-lg hover:bg-brown-dark hover:text-cream transition-all duration-200;
+  }
+
+  .genre-pill {
+    @apply px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer border;
+  }
+
+  .genre-pill-inactive {
+    @apply border-border-mid text-brown-mid bg-white hover:border-brown-dark hover:text-brown-dark;
+  }
+
+  .genre-pill-active {
+    @apply border-brown-dark bg-brown-dark text-cream;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:-translate-y-1 hover:shadow-lg;
+  }
+}
+
+/* Book spine gradient */
+.book-spine {
+  position: relative;
+  overflow: hidden;
+}
+
+.book-spine::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 2px 0 0 2px;
+}
+
+.book-spine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 50%, rgba(0,0,0,0.12) 100%);
+}

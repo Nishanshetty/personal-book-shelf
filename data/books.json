@@ -1,0 +1,62 @@
+[
+  {
+    "id": "23692271",
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "genre": "History",
+    "pages": 443,
+    "color": "#3B5998",
+    "available": true,
+    "deposit": 100,
+    "fee": 10,
+    "description": "A brief history of humankind, exploring how Homo sapiens came to dominate the Earth and shape civilisation.",
+    "goodreadsRating": 4.4,
+    "myRating": 5,
+    "featured": true,
+    "featuredNote": "One of those books that completely reframes how you see the world. Dense but readable — highly recommend."
+  },
+  {
+    "id": "11468377",
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "genre": "Psychology",
+    "pages": 499,
+    "color": "#C0392B",
+    "available": true,
+    "deposit": 100,
+    "fee": 10,
+    "description": "A groundbreaking tour of the mind explaining the two systems that drive the way we think and make decisions.",
+    "goodreadsRating": 4.18,
+    "myRating": 4
+  },
+  {
+    "id": "40121378",
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genre": "Self-help",
+    "pages": 320,
+    "color": "#1A5276",
+    "available": false,
+    "returnDate": "May",
+    "deposit": 100,
+    "fee": 10,
+    "description": "A practical guide to building good habits and breaking bad ones through tiny, incremental changes.",
+    "goodreadsRating": 4.35,
+    "myRating": 4
+  },
+  {
+    "id": "4671",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fiction",
+    "pages": 180,
+    "color": "#1E8449",
+    "available": true,
+    "deposit": 100,
+    "fee": 10,
+    "description": "A portrait of the Jazz Age in all of its decadence and excess, told through the eyes of narrator Nick Carraway.",
+    "goodreadsRating": 3.91,
+    "myRating": 3,
+    "forSale": true
+  }
+]
