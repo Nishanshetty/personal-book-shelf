@@ -106,6 +106,42 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ---
 
+## Syncing books from Goodreads
+
+Instead of manually writing every book in `books.json`, you can pull your entire "read" shelf directly from Goodreads.
+
+### 1. Get your Goodreads RSS URL
+
+1. Go to your Goodreads profile → **My Books** → **read** shelf
+2. Scroll to the bottom of the page — you'll see an RSS icon. Click it and copy the URL
+3. It looks like: `https://www.goodreads.com/review/list_rss/YOUR_ID?key=...&shelf=read`
+4. Add it to `.env.local` as `GOODREADS_RSS_URL`
+
+> Your RSS URL contains a private key — don't commit it. It stays safely in `.env.local`.
+
+### 2. Run the sync
+
+```bash
+npm run sync
+```
+
+This fetches every book from your read shelf and overwrites `data/books.json` with:
+- Title, author, page count, cover image, ISBN
+- Your Goodreads rating and your personal rating
+- Auto-detected genre (from shelf tags or title keywords)
+- A generated spine color (used if no cover image)
+
+### 3. After syncing
+
+A few things to tidy up manually after each sync:
+
+- **Availability** — the sync sets all books to `available: true`. Set `available: false` (and optionally `returnDate`) on any currently lent out
+- **For sale** — add `"forSale": true` to any books you're willing to sell
+- **Featured book** — add `"featured": true` and `"featuredNote": "..."` to whichever book you just finished
+- **Condition flags** — add `"hasNotes": true` or `"poorPrint": true` where relevant
+
+---
+
 ## Deploy to Vercel
 
 1. Push your repo to GitHub

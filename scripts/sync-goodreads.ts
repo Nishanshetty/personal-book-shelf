@@ -66,9 +66,12 @@ function stripHtml(html: string): string {
 }
 
 async function main() {
-  const rssUrl =
-    process.env.GOODREADS_RSS_URL ||
-    'https://www.goodreads.com/review/list_rss/180131573?key=lH96kbvjUbweQU2CqWUPG7Zfj9D8Zvlzmu9Kjx_heKEbL_Hb&shelf=read';
+  const rssUrl = process.env.GOODREADS_RSS_URL;
+  if (!rssUrl) {
+    console.error('Error: GOODREADS_RSS_URL is not set in your environment.');
+    console.error('Add it to .env.local — see README for how to get the URL.');
+    process.exit(1);
+  }
 
   console.log('Fetching Goodreads RSS…');
   const res = await fetch(rssUrl);
